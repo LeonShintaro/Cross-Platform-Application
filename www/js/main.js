@@ -20,6 +20,18 @@ function removeItem(){
 
 }
 
+function completeItem(){
+    var item = this.parentNode.parentNode;
+    var parent = item.parentNode;
+    var id = parent.id;
+
+    //Mark or unmark the item to be completed
+    var target = (id ==='todo') ? document.getElementById('completed'):document.getElementById('todo');
+
+    parent.removeChild(item);
+    target.insertBefore(item, target.childNodes[0]);
+}
+
 //Add new items to the todo list
 function addItemTodo(text){
     var list = document.getElementById('todo');
@@ -40,6 +52,9 @@ function addItemTodo(text){
     var complete = document.createElement('button');
     complete.classList.add('complete');
     complete.innerHTML = completeSVG;
+
+    //Complete button click event
+    complete.addEventListener('click', completeItem);
 
     buttons.appendChild(remove);
     buttons.appendChild(complete);

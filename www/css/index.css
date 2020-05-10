@@ -178,6 +178,10 @@ ul.todo li .buttons button.complete svg{
     border: 1.5px solid #25b99a;
 
     transition:background 0.2s ease;
+    -webkit-transition: fill 0.2s ease;
+    -moz-transition: fill 0.2s ease;
+    -ms-transition: fill 0.2s ease;
+    -o-transition: fill 0.2s ease;
 }
 
 ul.todo#completed li .buttons button.complete svg{
@@ -216,4 +220,38 @@ ul.todo li .buttons button.remove:hover svg .fill{
 
 ul.todo li .buttons button.complete svg .fill{
     fill: #25b99a;
+}
+
+ul.todo#completed{
+    padding: 60px 0 0 0;
+    position: relative;
+}
+
+ul.todo#completed:before{
+    width: 150px;
+    height: 1px;
+    background: #d8e5e0;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    margin: 0 0 0 -75px;
+    content: '';
+}
+
+ul.todo#todo:after{
+    margin: 15px 0 0 0;
+    content: 'Your Todo list is empty!';
+}
+
+ul.todo#completed:after{
+    content: 'You have not complete any tasks yet!';
+}
+
+ul.todo#todo:after,
+ul.todo#completed:after{
+    width: 100%;;
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: #aaa;
 }

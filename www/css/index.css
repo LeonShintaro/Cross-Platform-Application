@@ -238,12 +238,12 @@ ul.todo#completed:before{
     content: '';
 }
 
-ul.todo#todo:after{
+ul.todo#todo:empty:after{
     margin: 15px 0 0 0;
     content: 'Your Todo list is empty!';
 }
 
-ul.todo#completed:after{
+ul.todo#completed:empty:after{
     content: 'You have not complete any tasks yet!';
 }
 
